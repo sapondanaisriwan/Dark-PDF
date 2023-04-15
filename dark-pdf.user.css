@@ -1,0 +1,26 @@
+/* ==UserStyle==
+@name           Dark PDF
+@author         sapondanaisriwan <sapondanaisriwan@gmail.com> (https://github.com/sapondanaisriwan)
+@description    If you want to submit a bug or request a feature please report via github issue. Since I receive so many emails, I can't reply to them all.
+@namespace      https://userstyles.world/user/sapondanaisriwan
+@homepageURL    https://github.com/sapondanaisriwan/Dark-PDF
+@supportURL     https://github.com/sapondanaisriwan/Dark-PDF/issues
+@version        1.0.0
+@license        MIT
+@preprocessor   stylus
+@var select theme         "Theme" ["A", "B", "C"]
+==/UserStyle== */
+@-moz-document regexp(".*.(pdf)$") {
+
+  html, embed {
+      mix-blend-mode: exclusion if theme=="A";
+  }
+
+  embed {
+      mix-blend-mode: difference if theme=="B";
+  }
+
+  embed {
+      mix-blend-mode: overlay if theme=="C";
+  }
+}
